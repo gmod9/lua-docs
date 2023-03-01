@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Vectors - GMod9 Lua Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Vectors";
+        var mkdocs_page_input_path = "vectors.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> GMod9 Lua Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../defines/">Defines</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../faq/">Frequently Asked Questions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../playerinfo/">_PlayerInfo()</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../reference/">Lua Reference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sounds/">Sounds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../timers/">Timers</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../traces/">Traces</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Vectors</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">Syntax</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vector3">vector3()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vecstring">vecString()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vecadd">vecAdd()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vecsub">vecSub()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vecmul">vecMul()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#veccrossproduct">vecCrossProduct()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vecdotproduct">vecDotProduct()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vecnormalize">vecNormalize()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#veclength">vecLength()</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">GMod9 Lua Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Vectors</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vectors">Vectors</h1>
+<h2 id="description">Description</h2>
+<p>Vectors are used for everything postion-related. In Source, <code>y</code> and <code>z</code> axies are "flipped". That means that <code>z</code> is up-down and <code>y</code> is left-right.</p>
+<h2 id="syntax">Syntax</h2>
+<h3 id="vector3"><code>vector3()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>x</code> - Type: <code>number</code><br />
+- <code>y</code> - Type: <code>number</code><br />
+- <code>z</code> - Type: <code>number</code><br />
+<strong>Returns:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code></p>
+<h3 id="vecstring"><code>vecString()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code><br />
+<strong>Returns:</strong><br />
+- <code>string</code> - Type: <code>string</code>  </p>
+<h3 id="vecadd"><code>vecAdd()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>vector1</code> - Type: <code>vector3</code><br />
+- <code>vector2</code> - Type: <code>vector3</code><br />
+<strong>Returns:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code>  </p>
+<h3 id="vecsub"><code>vecSub()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>vector1</code> - Type: <code>vector3</code><br />
+- <code>vector2</code> - Type: <code>vector3</code><br />
+<strong>Returns:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code>  </p>
+<h3 id="vecmul"><code>vecMul()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>vector1</code> - Type: <code>vector3</code><br />
+- <code>vector2</code> - Type: <code>vector3</code> or <code>number</code><br />
+<strong>Returns:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code>  </p>
+<h3 id="veccrossproduct"><code>vecCrossProduct()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>vector1</code> - Type: <code>vector3</code><br />
+- <code>vector2</code> - Type: <code>vector3</code><br />
+<strong>Returns:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code>  </p>
+<h3 id="vecdotproduct"><code>vecDotProduct()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>vector1</code> - Type: <code>vector3</code><br />
+- <code>vector2</code> - Type: <code>vector3</code><br />
+<strong>Returns:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code>  </p>
+<h3 id="vecnormalize"><code>vecNormalize()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code><br />
+<strong>Returns:</strong><br />
+- <code>normalized_vector</code> - Type: <code>vector3</code>  </p>
+<h3 id="veclength"><code>vecLength()</code></h3>
+<p><strong>Arguments:</strong><br />
+- <code>vector</code> - Type: <code>vector3</code><br />
+<strong>Returns:</strong><br />
+- <code>length</code> - Type: <code>number</code>  </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../traces/" class="btn btn-neutral float-left" title="Traces"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../traces/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

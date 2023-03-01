@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Lua Reference - GMod9 Lua Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Lua Reference";
+        var mkdocs_page_input_path = "reference.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> GMod9 Lua Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../defines/">Defines</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../faq/">Frequently Asked Questions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../playerinfo/">_PlayerInfo()</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Lua Reference</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#player-related">Player-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entity-related">Entity-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#effects-related">Effects-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#file-manipulation">File manipulation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#server-related">Server-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trace">Trace</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sounds">Sounds</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gmodtext">GModText</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gmodrect">GModRect</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gmodquad">GModQuad</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#game-events">Game Events</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#spawnmenu">Spawnmenu</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#npc-related">NPC-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#physics-related">Physics-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#team-related">Team-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#utilities">Utilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#swep-related">SWEP-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#weapon-related">Weapon-related</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deprecated">'Deprecated'</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sounds/">Sounds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../timers/">Timers</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../traces/">Traces</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vectors/">Vectors</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">GMod9 Lua Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Lua Reference</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="lua-reference">Lua Reference</h1>
+<h2 id="player-related">Player-related</h2>
+<p><code>_PlayerShowScoreboard(playerid)</code> - Shows the scoreboard on the specified players screen.<br />
+<code>_PlayerSetSprint(playerid, bool)</code> - Enable/Disable sprint for player.<br />
+<code>_PlayerFreeze(playerid, bool)</code> - Freeze the specified player.<br />
+<code>_PlayerGetShootPos(playerid)</code> - Returns the vector of the player's shoot position.<br />
+<code>_PlayerGetShootAng(playerid)</code> - Returns the forward vector of the player's shoot angle.<br />
+<code>_PlayerGetActiveWeapon(playerid)</code> - Returns the player's active weapon id.<br />
+<code>_PlayerKill(playerid)</code> - Kill the specified player.<br />
+<code>_PlayerGiveAmmo(playerid, amount, ammotype, playsounds)</code> - Give specified player ammo. <code>playersounds</code> is bool.<br />
+<code>_PlayerRespawn(playerid)</code> - Force player to respawn.<br />
+<code>_PlayerSetDrawTeamCircle(playerid, bool)</code> - Sets whether to draw the team circle or not.<br />
+<code>_PlayerInfo(playerid, request)</code> - Returns info about a specific layer. Check _PlayerInfo page for usage.<br />
+<code>_PlayerChangeTeam(playerid, teamid)</code> - Changes a player's team.<br />
+<code>_PlayerSetModel(playerid, model)</code> - Changes a player's model.<br />
+<code>_PlayerGetRandomAllowedModel()</code> - Returns a random allowed player model.
+<code>_PlayerSetHealth(playerid, health)</code> - Changes a player's health.<br />
+<code>_PlayerSetArmor(playerid, armor)</code> - Changes a player's armor.<br />
+<code>_PlayerSetMaxSpeed(playerid, speed)</code> - Changes a player's maximum speed.<br />
+<code>_PlayerAddScore(playerid, score)</code> - Add to players score (can be minus).<br />
+<code>_PlayerSetScore(playerid, score)</code> - Sets to players score.<br />
+<code>_PlayerAddDeath(playerid, score)</code> - Add to players deaths score (can be minus).<br />
+<code>_PlayerGiveItem(playerid, item)</code> - Give player named item.<br />
+<code>_PlayerGiveSWEP(playerid, script)</code> - Give player scripted weapon.<br />
+<code>_PlayerRemoveAllWeapons(playerid)</code> - Strip all o a player's weapons.<br />
+<code>_PlayerRemoveWeapon(playerid, item)</code> - Strip a specific weapon.<br />
+<code>_PlayerAllowDecalPaint(playerid)</code> - Allow the player to spraypaint now rather than waiting the 30 or so seconds.<br />
+<code>_PlayerSetDrawViewModel(playerid, bool)</code> - Sets whether to draw the player's view model.<br />
+<code>_PlayerSelectWeapon(playerid, item)</code> - Select weapon.<br />
+<code>_PlayerSetDrawWorldModel(playerid, bool)</code> - Sets whether to draw the player's world model.<br />
+<code>_PlayerOption(playerid, callback, timeout)</code> - Player has an option to select.<br />
+<code>_PlayerSetVecView(playerid, vector)</code> - Sets the position of the view vector (0, 0, 64) default.<br />
+<code>_PlayerIsKeyDown(playerid, key)</code> - Check whether specified key is pressed.<br />
+<code>_PlayerSpectatorStart(playerid, mode)</code> - Stop spectating mode.<br />
+<code>_PlayerSpectatorTarget(playerid, target)</code> - Set Spectator target for player.<br />
+<code>_PlayerSpectatorEnd(playerid)</code> - Stop spectating mode.<br />
+<code>_PlayerSetVecDuck(playerid, vector)</code> - Sets the position of the duck view vector (0, 0, 24) default.<br />
+<code>_ScreenText(playerid, message, x, y, r, g, b, a, fadeid, fadeout, holdtime, effect, channel)</code> - Advanced function to print text to the screen. <code>effect</code> can be set to 0-2 and <code>channel</code> 0-5.<br />
+<code>_PrintMessage(playerid, type, message)</code> - Print a message to a specific player.<br />
+<code>_PrintMessageAll()</code> - Is like <code>_PrintMessage()</code> but for everyone on the server.<br />
+<code>_PlayerPreferredModel(playerid)</code> - Returns the player's preferred model. Returns a blank if the model isn't valid.<br />
+<code>_PlayerSilentKill(playerid, respawn_time, dissolve)</code> - Silently kill a player.<br />
+<code>_PlayerDetonateTripmines(playerid)</code><br />
+<code>_PlayerHolsterWeapon(playerid)</code><br />
+<code>_PlayerSetFOV(playerid, fov, time)</code><br />
+<code>_PlayerSetFlashlight(playerid, state)</code><br />
+<code>_PlayerStopZooming(playerid)</code><br />
+<code>_PlayerSetChaseCamDistance(playerid, distance)</code><br />
+<code>_PlayerLockInPlace(playerid, bool)</code><br />
+<code>_PlayerRemoveAllAmmo(playerid)</code><br />
+<code>_PlayerDisableAttack(playerid, bool)</code><br />
+<code>_PlayerShowCrosshair(playerid, bool)</code><br />
+<code>_PlayerEnableSprint(playerid, bool)</code><br />
+<code>_PlayerViewModelSequence(playerid, sequence)</code> - If successful returns the length of the sequence in seconds.<br />
+<code>_PlayerGetLimit(playerid, limit)</code><br />
+<code>_PlayerSetAnimation(playerid, sequence)</code> - Sets a player's animation.<br />
+<code>_PlayerSetWeaponSequence(player, sequence)</code> - Sets a players weapon activity.<br />
+<code>_PlayerIsCrouching(playerid)</code> - Returns true if a player is crouching.<br />
+<code>_PlayerUseVehicle(playerid, vehicle)</code> - Make a player attempt to enter a vehicle.<br />
+<code>_PlayerGod(playerid, bool)</code> - Give a player God Mode.<br />
+<code>_PlayerHasWeapon(playerid, item)</code> - Returns true if the player has this weapon.<br />
+<code>_PlayerWeaponTranslateSequence(player, sequence)</code> - Let the player's weapon decide how we should act out specific sequence.<br />
+<code>_player.ShowPanel</code> - Show/Hide a panel by name.<br />
+<code>_player.SetContextMenu(playerid, name)</code> - Set the player's context menu.<br />
+<code>_player.GetFlashlight(player)</code> - returns true if flashlight is on.<br />
+<code>_player.SetFlashlight(player, on)</code> - Set player FL on/off.<br />
+<code>_player.LastHitGroup(player)</code> - Get the las place the player was hit.<br />
+<code>_player.ShouldDropWeapon(player, bool)</code> - Should player drop weapon on death?  </p>
+<h2 id="entity-related">Entity-related</h2>
+<p><code>_EntSetMaterial(entid, material_filename)</code> - Set the material of specified entity.<br />
+<code>_EntSetGravity(entid, gravity)</code> - Set the gravity for specified entity.<br />
+<code>_EntGetType(entid)</code> - Returns a entity type name.<br />
+<code>_EntGetByName(name)</code> - Returns an entity by target name (0 if not found).<br />
+<code>_EntGetPos(entid)</code> - Returns a vector representing the position of the entity.<br />
+<code>_EntEmitSound(entid, filename)</code> - Make entity emit sound.<br />
+<code>_EntEmitSoundEx(entid, filename, volume_multiplier, pitch_multiplier)</code> - Make entity emit sound.<br />
+<code>_EntSetPos(entid, vector3 pos)</code> - Sets the position of the entity.<br />
+<code>_EntGetVelocity(entid)</code> - Gets the entity velocity. Returned as a vector3.<br />
+<code>_EntSetVelocity(entid, vector3_velocity)</code> - Sets the velocity of the entity.<br />
+<code>_EntGetForwardVector(entid)</code> - Returns the forward vector.<br />
+<code>_EntGetRightVector(entid)</code> - Returns the right vector.<br />
+<code>_EntGetUpVector(entid)</code> - Returns the up vector.<br />
+<code>_EntFire(entid, action, value, delay)</code> - ent_fire an entity.<br />
+<code>_EntCreate(entname)</code> - Creates but doesn't spawn specified entity.<br />
+<code>_EntSpawn(entindex)</code> - Spawns specified entity.<br />
+<code>_EntActivate(entindex)</code> - Activate an entity.<br />
+<code>_EntSetKeyValue(entindex, string_keyname, string_keyvalue)</code> - Sets an entity keyvalue (Must be done before spawning!).<br />
+<code>_EntSetModel(ent, model_name)</code> - Sets the model of an entity. PRE-CACHE THE MODEL FIRST.<br />
+<code>_EntSetOwner(ent, ownerid)</code> - Sets the owner.<br />
+<code>_EntGetOwner(ent)</code> - Gets the entity's owner.<br />
+<code>_EntRemove(entindex)</code> - Removes entity..<br />
+<code>_EntExists(entindex)</code> - Check if entity exists.<br />
+<code>_EntPrecacheModel(model_name)</code> - Pre-caches a model.<br />
+<code>_EntSetAng(entid, vector3_ang)</code> - Sets the angle of the entity (using a forward vector).<br />
+<code>_EntSetAngAngle(entid, vector3_angle)</code> - Sets the ANGLE of the entity.<br />
+<code>_EntGetAng(entid)</code> - Returns the angle as a normalized 'forward' vector.<br />
+<code>_EntGetAngAngle(entid)</code> - Returns the angle as a vector3.<br />
+<code>_EntGetModel(entid)</code> - Returns the entity's model name.<br />
+<code>_EntitiesFindByClass(classname)</code> - Returns a table of entities (or nil if none).<br />
+<code>_EntitiesFindInSphere(vector_position, radius)</code> - Returns a table of entities contained in the sphere.<br />
+<code>_EntitiesFindByName(targetname)</code> - Returns a table of entities (or nil if none).<br />
+<code>_EntityGetPhysicsAttacker(entity)</code> - Returns the last physics attacker.<br />
+<code>_EntitySetPhyscsAttacker(entity, attacker)</code> - Sets the physics attacker on a specified object.<br />
+<code>_EntSetGroundEntity(entity, groundentity)</code> - Pass entity as -1 to clear the ground entity.<br />
+<code>_EntGetGroundEntity(entity, groundentity)</code> - Pass entity as -1 to clear the ground entity.<br />
+<code>_EntSetMoveType(entity, type)</code> - Sets the movetype.<br />
+<code>_EntGetMoveType(entity)</code> - Gets the movetype.<br />
+<code>_EntSetMoveCollide(entity, type)</code> - Sets the movecollide.<br />
+<code>_EntGetMoveCllide(entity)</code> - Gets the movecollide.<br />
+<code>_EntSetSolid(entity, type)</code> - Sets the solid type.<br />
+<code>_EntGetSolid(entity)</code> - Gets the solid type.<br />
+<code>_EntSetCollisionGroup(entity, group)</code> - Sets the collision group.<br />
+<code>_EntGetCollisionGroup(entity)</code> - Gets the collision group.<br />
+<code>_EntGetWaterLevel(entity)</code> - Returns a number representing how under water an entity is. 0 means not underwater. 3 is totally underwater.<br />
+<code>_EntSetActivity(entid, int_sequence)</code> - Sets anactivity for an ent. Works for NPC's only.<br />
+<code>_EntGetDisposition(npc, entity)</code> - Gets an enemy disposition.<br />
+<code>_EntSetParent(entid, parent, attachment)</code> - Sets an entities parent.<br />
+<code>_EntGetParent(entid)</code> - Gets an entities parent.<br />
+<code>_EntGetName(entid)</code> - Gets an entities name.<br />
+<code>_EntSetName(entid, name)</code> - Sets an entities name.<br />
+<code>_EntSetMaxHealth(entid, health)</code> - Gets entity max health.<br />
+<code>_EntGetMaxHealth(entid)</code> - Sets entity max health.  </p>
+<h2 id="effects-related">Effects-related</h2>
+<p><code>_EffectInit()</code> - Resets the effect data<br />
+<code>_EffectSetOrigin(vector)</code><br />
+<code>_EffectSetAngles(vector)</code><br />
+<code>_EffectSetNormal(vector)</code><br />
+<code>_EffectSetStart(vector)</code><br />
+<code>_EffectSetEnt(entid)</code><br />
+<code>_EffectSetFlags(int)</code><br />
+<code>_EffectSetScale(float)</code><br />
+<code>_EffectSetMagnitude(float)</code><br />
+<code>_EffectSetRadius(float)</code><br />
+<code>_EffectSetAttachIndex(int)</code><br />
+<code>_EffectDispatch(name)</code>  </p>
+<h2 id="file-manipulation">File manipulation</h2>
+<p><code>_file.Exists(filename)</code> - Returns true if file exists.<br />
+<code>_file.Read(filename)</code> - Reads a file into a string.<br />
+<code>_file.Write(filename, string)</code> - Writes a string to a file.<br />
+<code>_file.CreateDir(folder)</code> - Creates Dir Hierarchy.<br />
+<code>_file.IsDir(folder)</code> - Returns true if is Dir.<br />
+<code>_file.Find(wildcard)</code> - Finds files, returns table, parameter should be like "maps/-.bsp".<br />
+<code>_file.Delete(wildcard)</code> - Deletes specified file.<br />
+<code>_file.Rename(before, after)</code> - Renames specified file.<br />
+<code>_ForceFileConsistency(filename)</code> - Force the file tobe the same on client and server. Should be called after pre-caching the file.  </p>
+<h2 id="server-related">Server-related</h2>
+<p><code>_StartNextLevel(map_name)</code> - Starts the next level.<br />
+<code>_GetNextMap()</code> - Returns next map name.<br />
+<code>_GetCurrentMap()</code> - Returns current map name.<br />
+<code>_GetRule(rule_string)</code> - Gets a rule.<br />
+<code>_ServerCommand(command)</code> - Runs a console command. Don't forget to put <code>\n</code> in the end.<br />
+<code>_GameSetTargetIDRules(int_rule)</code> - Sets targetID rules.<br />
+<code>_PluginMsg(userid, title, message, time, r, g, b, a, level)</code> - Sends a plugin message.<br />
+<code>_PluginText(userid, title, message, time, r, g, b, a, level)</code> - Sends plug in text.<br />
+<code>_GetConVar_Float(name)</code> - Get a server convar float.<br />
+<code>_GetConVar_String(name)</code> - Get a server convar string.<br />
+<code>_GetConVar_Bool(name)</code> - Get a server convar bool.<br />
+<code>_GetClientConVar_String(userid, name)</code> - Get a client convar string.<br />
+<code>_CurTime()</code> - Returns the current time in seconds.<br />
+<code>_MaxPlayers()</code> - Returns the max players in the server.<br />
+<code>_RunString(command)</code> - Runs a command in the main gameplay script.<br />
+<code>_GetModPath()</code> - Gets the path to the gmod folder (on the server). No trailing slash.<br />
+<code>_IsDedicatedServer()</code> - Returns whether dedicated server or not.<br />
+<code>_Msg(message)</code> - Outputs message to console.<br />
+<code>_OpenScript(filename)</code> - Opens a script.<br />
+<code>_ALERT(message)</code> - Internal Lua usage. Outputs error message.  </p>
+<h2 id="trace">Trace</h2>
+<p><code>_TraceAttack(victim, inflictor, attacker, amount)</code> - Attack using the last trace.<br />
+<code>_TraceSetCollisionGroup(group)</code> - Sets the collision group for the next trace to use. 
+<code>_TraceSetMask(group)</code> - Sets the MASK_ to use for the next trace.<br />
+<code>_TraceLine(vector_start, vector_direction, length, ignore)</code> - Traces a line. <code>ignore</code> is optional.<br />
+<code>_TraceEndPos()</code> - Return the end pos from the last trace.<br />
+<code>_TraceFraction()</code> - Return the fraction of trace completed.<br />
+<code>_TraceHitWorld()</code> - Return the true if the last trace hit the world.<br />
+<code>_TraceHitNonWorld()</code> - Return the true if the last trace hit non world.<br />
+<code>_TraceHit()</code> - Return the true if the last trace hit something.<br />
+<code>_TraceGetEnt()</code> - Return the entity that the last trace hit.<br />
+<code>_TraceGetSurfaceNormal</code> - Return the normal of the surface that the trace hit.<br />
+<code>_TraceDidHitSky()</code> - Returns true if last hit was the sky.<br />
+<code>_TraceDidHitHitbox()</code> - Returns true if last hit was some kind of hitbox.<br />
+<code>_TraceGetTexture()</code> - Returns the name of the texture that we hit.<br />
+<code>_TraceDidHitWater()</code> - Returns true if we hit water.<br />
+<code>_MakeDecal(decal)</code> - Makes a decal using the last trace.<br />
+<code>PlayerLookTrace(playerid, length)</code> - Traces a line where player's looking  </p>
+<h2 id="sounds">Sounds</h2>
+<p><code>_PlaySound(sound_name)</code> - Play a sound.<br />
+<code>_PlaySoundPlayer(playerid, sound_name)</code> - Play a sound to a specific player.  </p>
+<h2 id="gmodtext">GModText</h2>
+<p><code>_GModText_Start(font_name)</code> -  Initialize the text.<br />
+<code>_GModText_SetPos(x, y)</code> -  Set Position.<br />
+<code>_GModText_AllowOffscreen(bool)</code> -  Allow the text to go offscreen.<br />
+<code>_GModText_SetEntity(entindex)</code> -  Set entity to hover over.<br />
+<code>_GModText_SetColor(r, g, b, a)</code> -  Set Colour.<br />
+<code>_GModText_SetTime(duration, fadein, fadeout)</code> -  Set Times.<br />
+<code>_GModText_SetDelay(delay)</code> -  Set delay time.<br />
+<code>_GModText_SetText(text)</code> -  Set Times.<br />
+<code>_GModText_SetAdditive(bool)</code> -  Set Additive mode.<br />
+<code>_GModText_SetEntityOffset(vector)</code> -  Set entity offset to draw the text at.<br />
+<code>_GModText_Send(player, index)</code> -  If player is 0 it is sent to everyone. Index says which slot this text should fill.<br />
+<code>_GModText_Hide(player, index, fade_time, delay)</code> -  Hides specified text.<br />
+<code>_GModText_HideAll(player)</code> -  Hides All texts.<br />
+<code>_GModText_SendAnimate(player, index, length, ease)</code> -  The same as normal send but will animate from Send to the new values.  </p>
+<h2 id="gmodrect">GModRect</h2>
+<p><code>_GModRect_Start(material)</code> -  Initialize the rect.<br />
+<code>_GModRect_SetPos(x, y, width, height)</code> -  Set Position.<br />
+<code>_GModRect_SetEntity(entindex)</code> -  Set entity to hover over.<br />
+<code>_GModRect_SetColor(r, g, b, a)</code> -  Set Colour.<br />
+<code>_GModRect_SetTime(duration, fadein, fadeout)</code>-  Set Times.<br />
+<code>_GModRect_SetDelay(delay)</code> -  Set delay time.<br />
+<code>_GModRect_SetAdditive(bool)</code> -  Set Additive mode.<br />
+<code>_GModRect_SetEntityOffset(vector)</code> -  Set entity offset to draw the text at.<br />
+<code>_GModRect_Send(player, index)</code> -  If player is 0 it is sent to everyone. Index says which slot this text should fill.<br />
+<code>_GModRect_SendAnimate(player, index, length, ease)</code> -  If player is 0 it is sent to everyone. Index says which slot this text should fill.<br />
+<code>_GModRect_Hide(player, index, fade_time, delay)</code> -  Hides specified rect.<br />
+<code>_GModRect_HideAll(player)</code> - Hides All rects.  </p>
+<h2 id="gmodquad">GModQuad</h2>
+<p><code>_GModQuad_Hide(player, index, fade_time, delay)</code> -  Hides specified world quads.<br />
+<code>_GModQuad_HideAll(player)</code> -  Hides All world quads.<br />
+<code>_GModQuad_Start(material)</code> -  Initialize the quad.<br />
+<code>_GModQuad_SetVector(corner, vector)</code> -  Set a vector of one of the quad's corners. Acceptable <code>corner</code> values: 0-3.<br />
+<code>_GModQuad_SetTimings(delay, fadein, life, fadeout)</code> -  Set Timings.<br />
+<code>_GModQuad_SetEntity(entityid)</code> -  SetEntity to follow.<br />
+<code>_GModQuad_Send(player, index)</code> -  Send a quad to player. All players if player is 0.<br />
+<code>_GModQuad_SenAnimate(player, index, length, ease)</code> -  Send a quad to player. All players if player is 0.  </p>
+<h2 id="game-events">Game Events</h2>
+<p><code>_gameevent.Start(name)</code> - Starts a (fake) gameevent.<br />
+<code>_gameevent.SetString(name, value)</code> - Set Variable.<br />
+<code>_gameevent.SetInt(name, value)</code> - Set Variable.<br />
+<code>_gameevent.Fire()</code> - Fire event.  </p>
+<h2 id="spawnmenu">Spawnmenu</h2>
+<p><code>_spawnmenu.AddItem(playerid, category, name, modelent)</code><br />
+<code>_spawnmenu.RemoveCategory(playerid, category)</code><br />
+<code>_spawnmenu.RemoveAll(playerid)</code><br />
+<code>_spawnmenu.SetCategory(playerid, category)</code>  </p>
+<h2 id="npc-related">NPC-related</h2>
+<p><code>_SetDefaultRelationship(class, class, disposition)</code> -  Sets the default relationship between two life types.<br />
+<code>_npc.ExitScriptedSequence(ent)</code><br />
+<code>_npc.SetSchedule(end, sched)</code><br />
+<code>_npc.SetLastPosition(ent, vector)</code><br />
+<code>_npc.AddRelationship(ent, ent, disposition, priority)</code> - <code>priority</code> is int  </p>
+<h2 id="physics-related">Physics-related</h2>
+<p><code>_phys.EnableMotion(entid, boo)</code> - Enable/Disable motion.<br />
+<code>_phys.EnableDrag(entid, bool)</code> - Enable/Disable drag.<br />
+<code>_phys.EnableGravity(entid, bool)</code> - Enable/Disable gravity.<br />
+<code>_phys.EnableCollisions(entid, bool)</code> - Enable/Disable Collisions.<br />
+<code>_phys.GetMass(entid)</code> - Gets mass.<br />
+<code>_phys.SetMass(entid, mass)</code> - Sets mass.<br />
+<code>_phys.Sleep(entid)</code> - Make object sleep.<br />
+<code>_phys.Wake(entid)</code> - Wake a sleeping object.<br />
+<code>_phys.IsAsleep(entid)</code> - Check whatever object is rested.<br />
+<code>_phys.HasPhysics(entid)</code> - Returns true if entity has a physics object.<br />
+<code>_phys.ConstraintSetEnts(constraint, entity_1, entity_2)</code> - Set Entities for constraint.<br />
+<code>_phys.ApplyForceCenter(entid, force)</code> - Pushes an object from the center. <code>force</code> is vector3.<br />
+<code>_phys.ApplyForceOffset(entid, force, worldpos)</code> - Pushes an object from the center. <code>force</code> and <code>worldpos</code> are vector3.<br />
+<code>_phys.ApplyTorqueCenter(entid, force)</code> - Apply torque to the object. <code>force</code> is vector3.  </p>
+<h2 id="team-related">Team-related</h2>
+<p><code>_TeamAddScore(teamid, score)</code> - Add score for a team.<br />
+<code>_TeamSetScore(teamid, score)</code> - Set score for a team.<br />
+<code>_TeamNumPlayers(teamid)</code> - Get the number of players on a team.<br />
+<code>_TeamCount()</code> - Returns the number of teams
+<code>_TeamScore(teamid)</code> - Returns the total team score.<br />
+<code>_TeamSetName(teamid, name)</code> - Sets the name of the team.  </p>
+<h2 id="utilities">Utilities</h2>
+<p><code>_util.PlayerByName(name)</code> - Returns playerid of player with name.<br />
+<code>_util.PlayerByUserId(userid)</code> - Returns playerid.<br />
+<code>_util.EntsInBox(min, max)</code> - Returns entities contained in a box. <code>min</code> and <code>max</code> are vectors.<br />
+<code>_util.DropToFloor(ent)</code> - Drops entity to floor.<br />
+<code>_util.ScreenShake(pos, amp, frequency, duration, radius)</code> - Shakes screen.<br />
+<code>_util.PointAtEntity(ent1, ent2)</code> - Point one entity towards the other.  </p>
+<h2 id="swep-related">SWEP-related</h2>
+<p>All these function are only used when making SWEPs, check SWEP part.<br />
+<code>_WeaponScriptedAssign(weapon, script)</code> Assign a script to a scripted weapon.<br />
+<code>_SWEPSetSound(weapon_index, action, sound)</code> Sets SWEP sound.<br />
+<code>_SWEPUseAmmo(weapon_index, clip[0|1], amount)</code> Takes ammo from SWEP gun.<br />
+<code>_SWEPUpdateVariables(weapon_index)</code> Re-reads all the 'fetch' variables. You should call this if you have changed the accuracy etc.<br />
+<code>_SWEPRunString(weapon_index, string)</code> Runs a Lua string in the weapon's Lua instance.<br />
+<code>_swep.GetClipAmmo(weapon_id, clip[0|1])</code> Get amount of ammo in a clip.<br />
+<code>_swep.SetClipAmmo(weapon_index, clip[0|1], clip)</code> Get amount of ammo in a clip.<br />
+<code>_swep.GetDeathIcon(weapon_index)</code> Gets death icon name.  </p>
+<h2 id="weapon-related">Weapon-related</h2>
+<p><code>_WeaponSetModel(weapon_name, model_type, model_name)</code> Sets weapon model.<br />
+<code>_WeaponSetSlot(weapon_name, slot, pos)</code> - Sets weapon slot.<br />
+<code>_WeaponSetSound(weapon_name action, sound)</code> - Sets weapon sound.<br />
+<code>_WeaponSetFOV(weapon_name, fov)</code> - Sets a weapon's draw FOV.<br />
+<code>_WeaponFlipHands(weapon_name, bool)</code> - Flips a weapon's hands.<br />
+<code>_WeaponSetDamage(weapon_name, damage)</code> - Sets the damage that a bullet from this gun does.<br />
+<code>_WeaponSetup(weapon_name, anim_prefix, clip_size_1, clip_size_2, default_ammo_1, default_ammo_2, primary_ammo, secondary_ammo)</code> - Sets animation prefix.  </p>
+<h2 id="deprecated">'Deprecated'</h2>
+<p><code>_IsLinux()</code> Would return true if running on a Linux server</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../playerinfo/" class="btn btn-neutral float-left" title="_PlayerInfo()"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../sounds/" class="btn btn-neutral float-right" title="Sounds">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../playerinfo/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../sounds/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
