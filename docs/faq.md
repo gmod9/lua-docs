@@ -7,8 +7,8 @@ Nope. I know, that's amazing. What do you mean you like your PNGs that want to k
 ### Is DarkRP in GMod9?
 **LEAVE**
 
-### Are there any FnaF ragdolls?
-**LEAVE**
+### Are there any FNaF ragdolls?
+Well, yes but still, **LEAVE**
 
 ### Are there any maps from GMod13
 Nafrayu ported some maps over to GMod9, without it they wouldn't work. The only(?) person that knows how to do that is Nafrayu, but please, don't spam his DMs just because you want to see some map in GMod9
