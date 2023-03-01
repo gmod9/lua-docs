@@ -13,10 +13,11 @@
 
 ## Requests
 Here's a list of every known `request` parameter:  
-- `connected`: returns if connected, type: `bool`  
+- `connected`: returns if connected, type: `boolean`  
 - `health`: returns player's health, type: `number`  
 - `armor`: returns player's armor, type: `number`
-- `alive`: returns `true` if player is alive, type: `bool`
+- `alive`: returns `true` if player is alive, type: `boolean`
+- `kills`: player's kills, type: `number`
 
 ## Examples
 ### Healthy spam

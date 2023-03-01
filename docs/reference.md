@@ -8,7 +8,7 @@
 `_PlayerGetShootAng(playerid)` - Returns the forward vector of the player's shoot angle.  
 `_PlayerGetActiveWeapon(playerid)` - Returns the player's active weapon id.  
 `_PlayerKill(playerid)` - Kill the specified player.  
-`_PlayerGiveAmmo(playerid, amount, ammotype, playsounds)` - Give specified player ammo. `playersounds` is bool.  
+`_PlayerGiveAmmo(playerid, amount, ammotype, playsounds)` - Give specified player ammo. `playsounds` is bool.  
 `_PlayerRespawn(playerid)` - Force player to respawn.  
 `_PlayerSetDrawTeamCircle(playerid, bool)` - Sets whether to draw the team circle or not.  
 `_PlayerInfo(playerid, request)` - Returns info about a specific layer. Check _PlayerInfo page for usage.  
@@ -32,8 +32,8 @@
 `_PlayerOption(playerid, callback, timeout)` - Player has an option to select.  
 `_PlayerSetVecView(playerid, vector)` - Sets the position of the view vector (0, 0, 64) default.  
 `_PlayerIsKeyDown(playerid, key)` - Check whether specified key is pressed.  
-`_PlayerSpectatorStart(playerid, mode)` - Stop spectating mode.  
-`_PlayerSpectatorTarget(playerid, target)` - Set Spectator target for player.  
+`_PlayerSpectatorStart(playerid, mode)` - Start spectating.  
+`_PlayerSpectatorTarget(playerid, target)` - Set spectator target for player.  
 `_PlayerSpectatorEnd(playerid)` - Stop spectating mode.  
 `_PlayerSetVecDuck(playerid, vector)` - Sets the position of the duck view vector (0, 0, 24) default.  
 `_ScreenText(playerid, message, x, y, r, g, b, a, fadeid, fadeout, holdtime, effect, channel)` - Advanced function to print text to the screen. `effect` can be set to 0-2 and `channel` 0-5.  
@@ -109,7 +109,7 @@
 `_EntSetMoveType(entity, type)` - Sets the movetype.  
 `_EntGetMoveType(entity)` - Gets the movetype.  
 `_EntSetMoveCollide(entity, type)` - Sets the movecollide.  
-`_EntGetMoveCllide(entity)` - Gets the movecollide.  
+`_EntGetMoveCollide(entity)` - Gets the movecollide.  
 `_EntSetSolid(entity, type)` - Sets the solid type.  
 `_EntGetSolid(entity)` - Gets the solid type.  
 `_EntSetCollisionGroup(entity, group)` - Sets the collision group.  
@@ -148,7 +148,7 @@
 `_file.Find(wildcard)` - Finds files, returns table, parameter should be like "maps/-.bsp".  
 `_file.Delete(wildcard)` - Deletes specified file.  
 `_file.Rename(before, after)` - Renames specified file.  
-`_ForceFileConsistency(filename)` - Force the file tobe the same on client and server. Should be called after pre-caching the file.  
+`_ForceFileConsistency(filename)` - Force the file to be the same on client and server. Should be called after pre-caching the file.  
 
 ## Server-related
 `_StartNextLevel(map_name)` - Starts the next level.  
@@ -157,12 +157,12 @@
 `_GetRule(rule_string)` - Gets a rule.  
 `_ServerCommand(command)` - Runs a console command. Don't forget to put `\n` in the end.  
 `_GameSetTargetIDRules(int_rule)` - Sets targetID rules.  
-`_PluginMsg(userid, title, message, time, r, g, b, a, level)` - Sends a plugin message.  
-`_PluginText(userid, title, message, time, r, g, b, a, level)` - Sends plug in text.  
+`_PluginMsg(playerid, title, message, time, r, g, b, a, level)` - Sends a plugin message.  
+`_PluginText(playerid, title, message, time, r, g, b, a, level)` - Sends plug in text.  
 `_GetConVar_Float(name)` - Get a server convar float.  
 `_GetConVar_String(name)` - Get a server convar string.  
 `_GetConVar_Bool(name)` - Get a server convar bool.  
-`_GetClientConVar_String(userid, name)` - Get a client convar string.  
+`_GetClientConVar_String(playerid, name)` - Get a client convar string.  
 `_CurTime()` - Returns the current time in seconds.  
 `_MaxPlayers()` - Returns the max players in the server.  
 `_RunString(command)` - Runs a command in the main gameplay script.  
@@ -208,10 +208,10 @@
 `_GModText_SetText(text)` -  Set Times.  
 `_GModText_SetAdditive(bool)` -  Set Additive mode.  
 `_GModText_SetEntityOffset(vector)` -  Set entity offset to draw the text at.  
-`_GModText_Send(player, index)` -  If player is 0 it is sent to everyone. Index says which slot this text should fill.  
-`_GModText_Hide(player, index, fade_time, delay)` -  Hides specified text.  
-`_GModText_HideAll(player)` -  Hides All texts.  
-`_GModText_SendAnimate(player, index, length, ease)` -  The same as normal send but will animate from Send to the new values.  
+`_GModText_Send(playerid, index)` -  If player is 0 it is sent to everyone. Index says which slot this text should fill.  
+`_GModText_Hide(playerid, index, fade_time, delay)` -  Hides specified text.  
+`_GModText_HideAll(playerid)` -  Hides All texts.  
+`_GModText_SendAnimate(playerid, index, length, ease)` -  The same as normal send but will animate from Send to the new values.  
 
 ## GModRect
 `_GModRect_Start(material)` -  Initialize the rect.  
@@ -222,20 +222,20 @@
 `_GModRect_SetDelay(delay)` -  Set delay time.  
 `_GModRect_SetAdditive(bool)` -  Set Additive mode.  
 `_GModRect_SetEntityOffset(vector)` -  Set entity offset to draw the text at.  
-`_GModRect_Send(player, index)` -  If player is 0 it is sent to everyone. Index says which slot this text should fill.  
-`_GModRect_SendAnimate(player, index, length, ease)` -  If player is 0 it is sent to everyone. Index says which slot this text should fill.  
-`_GModRect_Hide(player, index, fade_time, delay)` -  Hides specified rect.  
-`_GModRect_HideAll(player)` - Hides All rects.  
+`_GModRect_Send(playerid, index)` -  If player is 0 it is sent to everyone. Index says which slot this text should fill.  
+`_GModRect_SendAnimate(playerid, index, length, ease)` -  If player is 0 it is sent to everyone. Index says which slot this text should fill.  
+`_GModRect_Hide(playerid, index, fade_time, delay)` -  Hides specified rect.  
+`_GModRect_HideAll(playerid)` - Hides All rects.  
 
 ## GModQuad
-`_GModQuad_Hide(player, index, fade_time, delay)` -  Hides specified world quads.  
-`_GModQuad_HideAll(player)` -  Hides All world quads.  
+`_GModQuad_Hide(playerid, index, fade_time, delay)` -  Hides specified world quads.  
+`_GModQuad_HideAll(playerid)` -  Hides All world quads.  
 `_GModQuad_Start(material)` -  Initialize the quad.  
 `_GModQuad_SetVector(corner, vector)` -  Set a vector of one of the quad's corners. Acceptable `corner` values: 0-3.  
 `_GModQuad_SetTimings(delay, fadein, life, fadeout)` -  Set Timings.  
 `_GModQuad_SetEntity(entityid)` -  SetEntity to follow.  
-`_GModQuad_Send(player, index)` -  Send a quad to player. All players if player is 0.  
-`_GModQuad_SenAnimate(player, index, length, ease)` -  Send a quad to player. All players if player is 0.  
+`_GModQuad_Send(playerid, index)` -  Send a quad to player. All players if player is 0.  
+`_GModQuad_SenAnimate(playerid, index, length, ease)` -  Send a quad to player. All players if player is 0.  
 
 ## Game Events
 `_gameevent.Start(name)` - Starts a (fake) gameevent.  
@@ -284,7 +284,7 @@
 
 ## Utilities
 `_util.PlayerByName(name)` - Returns playerid of player with name.  
-`_util.PlayerByUserId(userid)` - Returns playerid.  
+`_util.PlayerByUserId(playerid)` - Returns playerid.  
 `_util.EntsInBox(min, max)` - Returns entities contained in a box. `min` and `max` are vectors.  
 `_util.DropToFloor(ent)` - Drops entity to floor.  
 `_util.ScreenShake(pos, amp, frequency, duration, radius)` - Shakes screen.  

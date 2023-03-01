@@ -60,7 +60,7 @@ Nothing
 ## Examples
 ### Chat commands
 ```
--- This will unhook previous hooks if exectuing another time
+-- This will unhook previous hook if executing another time
 if chat_commands then
 	UnHookEvent(chat_commands.hook)
 end
