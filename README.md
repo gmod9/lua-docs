@@ -8,5 +8,7 @@ If you have any issues, then open an Issue.
 # To-do
 - `_GModRect()`
 - `_GModText()`
+- `_GModQuad()`
 - `_Effect*`
-- Finish making defines page
+- SWEP page
+- ~~Finish making defines page~~
