@@ -13,15 +13,19 @@
 
 ## Requests
 Here's a list of every known `request` parameter:  
+- `name` - Player's name. Type: `string`  
 - `connected` - `true` if connected. Type: `boolean`  
+- `ping` - Player's ping. Type: `number`  
+- `packetloss` - Player's packet loss. Type: `number`  
+- `networkid` - Player's SteamID. Type: `string`  
 - `health` - Player's health. Type: `number`  
 - `armor` - Player's armor. Type: `number`  
 - `alive` - `true` if alive. Type: `boolean`  
 - `kills` - Player's kills. Type: `number`  
-- `networkid` - Player's SteamID. Type: `string`  
 - `deaths` - Player's deaths. Type: `number`  
-- `packetloss` - Player's packet loss. Type: `number`  
-- `ping` - Player's ping. Type: `number`  
+- `team` - ID of the team player's on. Type: `number`  
+- `weapon` - Class name of weapon player's holding. Type: `string`  
+- `model` - Filepath to player's model. Type: `string`  
 *Thanks to mv#7803 for figuring out more requests*
 
 ## Examples
