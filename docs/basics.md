@@ -4,7 +4,7 @@ of Lua language. Lua is one of the easiest
 languages to learn. Here are basic things you
 need to know if you are starting with Lua:
 
-- Scripts end with .lua extension
+- Scripts end with `.lua` extension
 - You can use any text editor to write Lua code
 - You don't need to compile anything
 - To load the script on the fly, use `lua_openscript` console command
@@ -12,8 +12,7 @@ need to know if you are starting with Lua:
 - `;` are optional
 - In `if` statements `()` are optional if not working with multiple things
 
-You can find full Lua documentation here: <https://www.lua.org/manual/5.1/>  
-*Note that GMod9 uses Lua 5.0 while documentation is only available for 5.1+, so some things might not exist*
+You can find full Lua documentation here: <https://www.lua.org/manual/5.0/>  
 
 And here's how you do basic stuff:
 
