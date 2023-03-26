@@ -9,15 +9,20 @@
 - `playerid` - ID of the player. Type: `number`  
 - `request` - Requested variable. Type: `string`  
 **Returns:**
-- `state` - State of `request` for specified player. Type: depends on `request`
+- `state` - State of `request` for specified player. Returns `<Not Found>` if a request wasn't implemented. Type: depends on `request`
 
 ## Requests
 Here's a list of every known `request` parameter:  
-- `connected`: returns if connected, type: `boolean`  
-- `health`: returns player's health, type: `number`  
-- `armor`: returns player's armor, type: `number`
-- `alive`: returns `true` if player is alive, type: `boolean`
-- `kills`: player's kills, type: `number`
+- `connected` - `true` if connected. Type: `boolean`  
+- `health` - Player's health. Type: `number`  
+- `armor` - Player's armor. Type: `number`  
+- `alive` - `true` if alive. Type: `boolean`  
+- `kills` - Player's kills. Type: `number`  
+- `networkid` - Player's SteamID. Type: `string`  
+- `deaths` - Player's deaths. Type: `number`  
+- `packetloss` - Player's packet loss. Type: `number`  
+- `ping` - Player's ping. Type: `number`  
+*Thanks to mv#7803 for figuring out more requests*
 
 ## Examples
 ### Healthy spam
