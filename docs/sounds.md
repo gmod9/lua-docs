@@ -1,6 +1,6 @@
 # Sounds
 ## Description
-The title is explains everything. If you want to play custom sounds, the client needs to download them using FastDL. There is also no way to stop a sound without using SourceMod. You can easily find and preview Half-Life 2 sounds on https://hl2sounds.ceifa.tv/
+The title is explains everything. If you want to play custom sounds, the client needs to download them using FastDL. There is also no way to stop a sound without using SourceMod. You can easily find and preview Half-Life 2 sounds on <https://hl2sounds.ceifa.tv/>
 
 ## Variables
 ### `_PlaySound()`
