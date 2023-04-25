@@ -5,7 +5,7 @@ categories in the spawnmenu. For example, SWEP menu
 is one.
 
 ## Syntax
-- `_spawnmenu.AddItem()`
+### `_spawnmenu.AddItem()`
 **Arguments:**  
 - `player` - PlayerID. Type: `number`  
 - `category` - Name of the category. If the category doesn't exist, it'll be created. Type: `string`  
@@ -14,21 +14,21 @@ is one.
 **Returns:**  
 Nothing
 
-- `_spawnmenu.SetCategory()`
+### `_spawnmenu.SetCategory()`
 **Arguments:**
 - `player` - PlayerID. Type: `string`  
 - `category` - Name of category to switch to. Type: `string`  
 **Returns:**  
 Nothing  
 
-- `_spawnmenu.RemoveCategory()`
+### `_spawnmenu.RemoveCategory()`
 **Arguments:**
 - `player` - PlayerID. Type: `string`  
 - `category` - Name of the category to remove. Type: `string`  
 **Returns:**  
 Nothing  
 
-- `_spawnmenu.RemoveAll()`
+### `_spawnmenu.RemoveAll()`
 **Arguments:**
 - `player` - PlayerID for who all the custom categories be removed. Type: `string`  
 **Returns:**  
