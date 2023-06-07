@@ -23,7 +23,7 @@ Nothing
 ### `eventPlayerChangeTeam(name, userid, new_team, old_team)`
 ### `eventPlayerKilled(userid, attacker, weapon)`
 ### `eventPlayerNameChange(userid, newname, oldname)`
-### `eventPlayerHurt(userid, newhealth, attacker)`
+### `eventPlayerHurt(userid, newhealth, attacker)` - When `newhealth` is `1`, the player will die unless you update their health using `_PlayerSetHealth()`
 ### `PickDefaultSpawnTeam(userid)` - Return `false` to choose a random valid team
 ### `eventPlayerSpawn(userid)`
 ### `eventPlayerSpawnProp(userid, propname)` - Return `true` to allow
