@@ -90,7 +90,7 @@ chat_commands = {
 }
 
 chat_commands.hook = HookEvent("eventPlayerSay", function(playerid, message, _)
-	-- For some reason, `message` also contains player's name, so we remove it. Also, space **MUST** be always present, check next comment for more details
+	-- For some reason, `message` also contains player's name, so we remove it. Also, space **MUST** be always present, check `key`
 	message = string.gsub(message, _PlayerInfo(playerid, "name") .. ": ", "") .. " "
 	if string.sub(message, 1, 1) == chat_commands.prefix then
 		local key = string.sub(message, 2, string.find(message, " ") - 1)
